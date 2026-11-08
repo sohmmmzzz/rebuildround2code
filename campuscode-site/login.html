@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Login – CampusCode</title>
+    <script>
+        try {
+            if (localStorage.getItem("cc-theme") === "light") {
+                document.documentElement.dataset.theme = "light";
+            }
+        } catch (e) {}
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="polish.css">
+</head>
+
+<body data-page="login">
+    <canvas id="orb" aria-hidden="true"></canvas>
+    <canvas id="gl" aria-hidden="true"></canvas>
+
+    <header class="nav">
+        <a class="logo" href="index.html">
+            <span class="logo-mark">
+                <span class="slash black"></span>
+                <span class="slash purple"></span>
+                <span class="slash lime"></span>
+            </span>
+
+            <span class="logo-text">
+                <strong>CAMPUSCODE</strong>
+                <small>HACKATHON ARENA</small>
+            </span>
+        </a>
+
+        <div class="act">
+            <button class="theme" id="theme" aria-label="Switch to light theme" aria-pressed="false">
+                <canvas id="tc" width="88" height="88"></canvas>
+            </button>
+            <a class="login" href="index.html">← BACK TO HOME</a>
+        </div>
+    </header>
+
+    <main class="auth">
+        <section class="aleft">
+            <p class="acrumb">
+                <i></i>
+                CAMPUSCODE / AUTHENTICATION
+            </p>
+
+            <div class="arow">
+                <span>ACCESS</span>
+                <span>01 / 02</span>
+            </div>
+
+            <h1 data-split>
+                ENTER<br>
+                THE<br>
+                <span class="out">ARENA.</span>
+            </h1>
+
+            <p class="adesc">
+                Sign in to continue building, collaborating and competing with the CampusCode community.
+            </p>
+
+            <div class="atiles">
+                <div class="atile">
+                    <small>01</small>
+                    <b>BUILD</b>
+                </div>
+                <div class="atile">
+                    <small>02</small>
+                    <b>COMPETE</b>
+                </div>
+                <div class="atile">
+                    <small>03</small>
+                    <b>SHIP</b>
+                </div>
+            </div>
+            <div class="arow foot">
+                <span><i></i>AUTHENTICATION READY</span>
+                <span>SECURE ACCESS</span>
+                <span>2026</span>
+            </div>
+        </section>
+        <section class="acard">
+            <form id="f" class="pane" novalidate>
+                <div class="achead">
+                    <span>EXISTING ACCOUNT</span>
+                    <span>CC 01</span>
+                </div>
+
+                <h2 data-split>LOGIN</h2>
+                <p class="asub">Access your CampusCode account.</p>
+
+                <label class="afld">
+                    <span>EMAIL ADDRESS</span>
+                    <div class="ain">
+                        <i>@</i>
+                        <input id="email" data-v="email" type="email" autocomplete="email" placeholder="you@example.com">
+                    </div>
+                    <small class="aerr"></small>
+                </label>
+
+                <label class="afld">
+                    <span>PASSWORD</span>
+                    <div class="ain">
+                        <i>•</i>
+                        <input id="pw" data-v="pwl" type="password" autocomplete="current-password" placeholder="Enter your password">
+                        <button type="button" class="show" data-t="pw">SHOW</button>
+                    </div>
+                    <small class="aerr"></small>
+                </label>
+
+                <div class="afld">
+                    <span>CAPTCHA</span>
+                    <div class="cap">
+                        <canvas id="cap" width="300" height="108" role="img" aria-label="Captcha image with 5 digits"></canvas>
+                        <button type="button" id="capn">↻ NEW</button>
+                    </div>
+                    <div class="ain">
+                        <input id="code" data-v="code" inputmode="numeric" maxlength="5" autocomplete="off" placeholder="Enter the code above" aria-label="Captcha code">
+                    </div>
+                    <small class="aerr"></small>
+                </div>
+
+                <div class="astat" id="stat" data-s="wait" role="status">
+                    <div class="mark">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </div>
+                    <span class="zz">Zzz</span>
+                    <b id="stl">WAITING</b>
+                    <em class="bar"></em>
+                </div>
+                <button class="abtn" id="go" type="submit">
+                    <span>LOGIN</span>
+                    <b>↗</b>
+                </button>
+                <div class="alinks">
+                    <a href="#" id="forgot">FORGOT PASSWORD?</a>
+                </div>
+                <div class="alinks top">
+                    <span>DON’T HAVE AN ACCOUNT?</span>
+                    <a href="register.html">CREATE ACCOUNT →</a>
+                </div>
+            </form>
+
+            <div class="pane" id="ok" hidden>
+                <p class="label">CC 01 / ACCESS</p>
+                <h2 class="big">ACCESS GRANTED.</h2>
+                <p class="okp">You’re in. This is a front-end demo, so nothing was sent anywhere.</p>
+                <a class="abtn" id="next" href="student.html">
+                    <span>OPEN DASHBOARD</span>
+                    <b>↗</b>
+                </a>
+            </div>
+            <div class="acap">
+                <span>AUTH / 2026</span>
+                <span>SECURE LOGIN</span>
+            </div>
+        </section>
+    </main>
+    <div class="afoot">
+        <span>CAMPUSCODE © 2026</span>
+        <span>LEARN · BUILD · COMPETE · SHIP</span>
+        <span>ALL SYSTEMS OPERATIONAL</span>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

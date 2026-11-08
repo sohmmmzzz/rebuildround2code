@@ -1,0 +1,8 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/student", "destination": "/student.html" },
+    { "source": "/student/events", "destination": "/events.html" },
+    { "source": "/student/my-events", "destination": "/my-events.html" }
+  ]
+}

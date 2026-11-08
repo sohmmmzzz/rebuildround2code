@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>CampusCode – Hackathon Arena</title>
+    <script>
+        try {
+            if (localStorage.getItem("cc-theme") === "light") {
+                document.documentElement.dataset.theme = "light";
+            }
+        } catch (e) {}
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="polish.css">
+</head>
+<body>
+    <canvas id="orb" aria-hidden="true"></canvas>
+    <canvas id="gl" aria-hidden="true"></canvas>
+    <header class="nav">
+        <a class="logo" href="#top">
+            <span class="logo-mark">
+                <span class="slash black"></span>
+                <span class="slash purple"></span>
+                <span class="slash lime"></span>
+            </span>
+            <span>
+                <strong>CAMPUSCODE</strong>
+                <small>HACKATHON ARENA</small>
+            </span>
+        </a>
+        <nav class="links">
+            <a href="#about">ABOUT</a>
+            <a href="#how">HOW IT WORKS</a>
+            <a href="#hackathons">HACKATHONS</a>
+            <a href="#community">COMMUNITY</a>
+        </nav>
+        <div class="act">
+            <button class="theme" id="theme" aria-label="Switch to light theme" aria-pressed="false">
+                <canvas id="tc" width="88" height="88"></canvas>
+            </button>
+            <a class="login" href="login.html">LOGIN</a>
+            <a class="join" href="register.html">JOIN CAMPUSCODE ↗</a>
+        </div>
+    </header>
+    <aside class="rail" id="rail" aria-label="Page sections"></aside>
+    <div class="count">
+        <b id="cn">01</b>/08
+        <span id="cl">LAUNCH</span>
+    </div>
+    <button class="star" id="star" aria-label="Menu">
+        <span>✦</span>
+        <em>×3</em>
+        <svg viewBox="0 0 44 44">
+            <circle id="ring" cx="22" cy="22" r="19"/>
+        </svg>
+    </button>
+    <p class="hint" id="hint">double-tap anywhere</p>
+    <nav class="menu" id="menu" aria-label="Menu" hidden>
+        <button class="x" id="close">close ✕</button>
+        <a class="m" href="#about" style="--x:-40vw;--y:-30vh;--r:-40deg">About</a>
+        <a class="m" href="#how" style="--x:45vw;--y:-20vh;--r:30deg">How it works</a>
+        <a class="m" href="#hackathons" style="--x:-30vw;--y:40vh;--r:60deg">Hackathons</a>
+        <a class="m" href="#community" style="--x:40vw;--y:35vh;--r:-25deg">Community</a>
+        <a class="m hot" href="login.html" style="--x:0vw;--y:-60vh;--r:90deg">Login ↗</a>
+    </nav>
+    <main>
+        <section class="st hero" id="top" data-stage>
+            <p class="top">
+                <i></i>
+                THE DIGITAL HOME FOR STUDENT INNOVATION
+            </p>
+            <p class="label">CAMPUSCODE / 001</p>
+            <h1 data-split>
+                BUILD<br>
+                <span class="out">COMPETE</span><br>
+                SHIP
+            </h1>
+            <p class="tagline">Ideas don’t stay grounded. They launch.</p>
+            <p class="desc">
+                A digital arena for students who don’t just have ideas. They build them.
+            </p>
+            <a class="btn" href="#hackathons">
+                EXPLORE HACKATHONS <b>↗</b>
+            </a>
+            <div class="bottom">
+                <span>SCROLL TO EXPLORE</span>
+                <div class="sl">
+                    <i></i>
+                </div>
+            </div>
+        </section>
+        <section class="marq">
+            <div>
+                <span>
+                    IDEAS ✦ PEOPLE ✦ PRODUCTS ✦ INNOVATION ✦ COMMUNITY ✦
+                    IDEAS ✦ PEOPLE ✦ PRODUCTS ✦ INNOVATION ✦ COMMUNITY ✦
+                </span>
+            </div>
+        </section>
+        <section class="st" id="about" data-stage>
+            <span class="num">01</span>
+            <p class="label">
+                <i></i>
+                WHAT IS CAMPUSCODE?
+            </p>
+            <h2 data-split>
+                WHERE<br>
+                STUDENTS<br>
+                <em>BUILD</em>
+            </h2>
+            <p class="lead">
+                CampusCode brings students, teams, organizers and hackathons into one connected ecosystem.
+            </p>
+        </section>
+        <section class="st exp" data-stage>
+            <div class="row">
+                <span>02 — EXPERIENCE</span>
+                <span>00:30</span>
+            </div>
+            <p class="label">THE CAMPUSCODE EXPERIENCE</p>
+            <h2 data-split>
+                BUILD TOGETHER.<br>
+            </h2>
+            <div class="film" id="film" role="button" tabindex="0" aria-label="Play the CampusCode film">
+                <video
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata"
+                    poster="videos/poster.jpg"
+                    src="videos/what-is-campuscode.mp4">
+                </video>
+                <span class="badge">▶</span>
+                <span class="tap">TAP TO PLAY</span>
+            </div>
+            <div class="row">
+                <span>WATCH THE STORY</span>
+                <span>PLAYS AS YOU SCROLL ↗</span>
+            </div>
+        </section>
+        <section class="st" id="how" data-stage>
+            <div class="head">
+                <div>
+                    <span class="num">03</span>
+                    <h2 data-split>HOW IT WORKS</h2>
+                </div>
+                <p>
+                    FROM IDEA<br>
+                    TO IMPACT.
+                </p>
+            </div>
+            <div class="slider">
+                <div class="pstage" id="pst" tabindex="0" aria-label="How it works: four planets. Drag, or use the arrow keys.">
+                    <canvas id="plc"></canvas>
+                </div>
+                <div class="pinfo" id="pinfo" aria-live="polite">
+                    <b class="sw" id="pn">01</b>
+                    <h3 class="sw" id="pt">DISCOVER</h3>
+                    <p class="sw" id="pd">
+                        Find a challenge that makes you want to build.
+                    </p>
+                    <div class="pctl">
+                        <button id="pprev" aria-label="Previous step">←</button>
+                        <div class="dots" id="pdots"></div>
+                        <button id="pnext" aria-label="Next step">→</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="st" id="hackathons" data-stage>
+            <div class="head">
+                <div>
+                    <span class="num">04</span>
+                    <h2 data-split>ENTER THE ARENA</h2>
+                </div>
+                <a class="btn sm" href="login.html">VIEW ALL ↗</a>
+            </div>
+            <div class="list">
+                <a class="hrow" href="login.html">
+                    <b>01</b>
+                    <div>
+                        <small>ARTIFICIAL INTELLIGENCE</small>
+                        <h3>AI INNOVATION</h3>
+                    </div>
+                    <p>Build intelligent solutions for problems that matter.</p>
+                    <em class="on">
+                        <i></i>
+                        LIVE
+                    </em>
+                    <span>↗</span>
+                </a>
+                <a class="hrow" href="login.html">
+                    <b>02</b>
+                    <div>
+                        <small>WEB DEVELOPMENT</small>
+                        <h3>FUTURE WEB</h3>
+                    </div>
+                    <p>Design and ship the next generation of digital experiences.</p>
+                    <em>
+                        <i></i>
+                        OPEN
+                    </em>
+                    <span>↗</span>
+                </a>
+                <a class="hrow" href="login.html">
+                    <b>03</b>
+                    <div>
+                        <small>SMART TECHNOLOGY</small>
+                        <h3>CAMPUS TECH</h3>
+                    </div>
+                    <p>Create technology that makes student life better.</p>
+                    <em>
+                        <i></i>
+                        UPCOMING
+                    </em>
+                    <span>↗</span>
+                </a>
+            </div>
+        </section>
+        <section class="st mission" data-stage>
+            <div class="wm" aria-hidden="true">CAMPUSCODE</div>
+            <p class="label">05 — THE MISSION</p> ̰
+            <h2 data-split>
+                GREAT<br>
+                IDEAS<br>
+                <em>NEED BUILDERS.</em>
+            </h2>
+            <p class="lead">
+                Your university is full of people with ideas. CampusCode gives those ideas somewhere to go.
+            </p>
+        </section>
+        <section class="st" id="community" data-stage>
+            <p class="label">THE NETWORK</p>
+            <h2 data-split>
+                FIND<br>
+                YOUR<br>
+                <em>PEOPLE.</em>
+            </h2>
+            <p class="lead">
+                Build with developers.<br>
+                Think with designers.<br>
+                Compete with builders.
+            </p>
+        </section>
+        <section class="st cta" data-stage>
+            <p class="label">READY?</p>
+            <h2 data-split>
+                YOUR NEXT<br>
+                <span class="out">PROJECT</span><br>
+                STARTS HERE.
+            </h2>
+            <a class="btn" href="register.html">
+                JOIN CAMPUSCODE <b>↗</b>
+            </a>
+        </section>
+    </main>
+    <footer>
+        <div class="fb">
+            <div class="logo">
+               <a class="logo" href="#top">
+                <span class="logo-mark">
+                    <span class="slash black"></span>
+                    <span class="slash purple"></span>
+                    <span class="slash lime"></span>
+                </span>
+                <span>
+                    <strong>CAMPUSCODE</strong>
+                    <small>HACKATHON ARENA</small>
+                </span>
+               </a>
+            </div>
+            <p>
+                The student hackathon arena.<br>
+                You build the idea,<br>
+                we run the competition.
+            </p>
+        </div>
+        <div>
+            <h4>PRODUCT</h4>
+            <a href="#about">About</a>
+            <a href="#hackathons">Hackathons</a>
+            <a href="#how">How it works</a>
+            <a href="#community">Community</a>
+        </div>
+        <div>
+            <h4>BUILDERS</h4>
+            <a href="#">Students</a>
+            <a href="#">Teams</a>
+            <a href="#">Organizers</a>
+            <a href="#">Developers</a>
+        </div>
+        <div>
+            <h4>GUIDES</h4>
+            <a href="#">Hackathon Rules</a>
+            <a href="#">FAQ</a>
+            <a href="#">Support</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="fs">
+            <span>
+                <i></i>
+                ALL SYSTEMS OPERATIONAL
+            </span>
+            <a href="#">TERMS</a>
+            <a href="#">PRIVACY</a>
+            <a href="#">CONTACT</a>
+        </div>
+        <div class="fbot">
+            <span>© 2026 CAMPUSCODE</span>
+            <span>LEARN · BUILD · COMPETE · SHIP</span>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

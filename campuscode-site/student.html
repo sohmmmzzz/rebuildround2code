@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>OVERVIEW – CampusCode Student</title>
+<script>try{if(localStorage.getItem("cc-theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;700;800;900&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="dash.css">
+  <link rel="stylesheet" href="polish.css">
+</head>
+<body class="d" data-page="overview">
+<canvas id="orb" aria-hidden="true"></canvas>
+<div class="dshell">
+<aside class="side" id="side">
+  <a class="logo" href="index.html">
+    <span class="logo-mark">
+        <span class="slash black"></span>
+        <span class="slash purple"></span>
+        <span class="slash lime"></span>
+    </span>
+
+    <span class="logo-text">
+        <strong>CAMPUSCODE</strong>
+        <small>HACKATHON ARENA</small>
+    </span>
+</a>
+  <div class="slabel">WORKSPACE</div>
+  <nav class="snav" aria-label="Student navigation"><a href="student.html" data-route="overview" class=" on"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Overview</a><a href="events.html" data-route="events" class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM17 5h3v2a3 3 0 0 1-3 3M7 5H4v2a3 3 0 0 0 3 3"/></svg>Events</a><a href="my-events.html" data-route="my-events" class=""><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>My Events</a><a href="#" data-soon class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.7 1.8L21.5 18.5l-1.8.7L19 21l-.7-1.8-1.8-.7 1.8-.7z"/></svg>HackMate AI</a><a href="#" data-soon class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.7 1.8L21.5 18.5l-1.8.7L19 21l-.7-1.8-1.8-.7 1.8-.7z"/></svg>IdeaCheck AI</a><a href="#" data-soon class=""><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L8 21l4-2 4 2-1-7.5"/></svg>Certificates</a><a href="#" data-soon class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 10h4M7 14h4M15 10h2M15 14h2"/></svg>Digital Card</a><a href="#" data-soon class=""><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="8" width="16" height="11" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01"/></svg>RuleBot AI<em>AI</em></a><a href="#" data-soon class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2V5zM8 7h7"/></svg>Student Guide</a><a href="#" data-soon class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9a6 6 0 0 1 12 0c0 6 2 7 2 7H4s2-1 2-7M10 20a2 2 0 0 0 4 0"/></svg>Official Communication</a><a href="#" data-soon class=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9a6 6 0 0 1 12 0c0 6 2 7 2 7H4s2-1 2-7M10 20a2 2 0 0 0 4 0"/></svg>Notifications</a><a href="#" data-soon class=""><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17h.01"/></svg>Help & Support</a><a href="#" data-soon class=""><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>Profile</a></nav>
+  <div class="sacct"><small>ACCOUNT</small><div class="suser"><span class="av">SK</span><div>Soham Kiran Patil<small>STUDENT</small></div></div></div>
+</aside>
+<div class="sback" id="sback"></div>
+<div class="dmain">
+  <header class="dtop">
+    <div style="display:flex;gap:14px;align-items:center"><button class="ibtn mbtn" id="mbtn" aria-label="Open menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><div class="dcrumb"><small>CAMPUSCODE / STUDENT</small><b id="ptitle">OVERVIEW</b></div></div>
+    <div class="dact">
+      <button class="ibtn" id="bell" aria-label="Notifications"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9a6 6 0 0 1 12 0c0 6 2 7 2 7H4s2-1 2-7M10 20a2 2 0 0 0 4 0"/></svg><span class="nb" id="nb">2</span></button>
+      <div class="nd" id="nd" hidden></div>
+      <button class="rbtn" id="rf"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v5h-5"/></svg><span>REFRESH</span></button>
+      <button class="theme" id="theme" aria-label="Switch to light theme" aria-pressed="false"><canvas id="tc" width="88" height="88"></canvas></button>
+      <div class="pchip"><span class="av">SK</span><span>Soham Kiran Patil</span></div>
+    </div>
+  </header>
+  <main class="dview" id="view"></main>
+</div>
+</div>
+<div class="ov" id="ov" hidden></div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="dash.js"></script>
+</body>
+</html>
